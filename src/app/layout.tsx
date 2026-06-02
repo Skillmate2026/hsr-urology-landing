@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: "Trusted urology consultation for men, women and children in HSR Layout, Sectors 1-7, and nearby areas within 5 km.",
   keywords: ["urologist HSR Layout", "urology clinic HSR", "kidney stone treatment", "prostate specialist", "urology doctor near me"],
   icons: {
-    icon: "/clinic-logo.png", // Shortcut icon for browser tabs
-    apple: "/clinic-logo.png", // Optional: Icon for iOS home screen bookmarks
+    icon: "/favicon.png", 
+    apple: "/favicon.png", 
   },
   openGraph: {
     title: "HSR Urology Clinic | Expert Urologic Care",
