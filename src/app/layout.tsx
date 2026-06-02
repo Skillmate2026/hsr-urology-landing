@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "HSR Urology Clinic | Expert Urologic Care in HSR Layout",
   description: "Trusted urology consultation for men, women and children in HSR Layout, Sectors 1-7, and nearby areas within 5 km.",
   keywords: ["urologist HSR Layout", "urology clinic HSR", "kidney stone treatment", "prostate specialist", "urology doctor near me"],
+  icons: {
+    icon: "/clinic-logo.png", // Shortcut icon for browser tabs
+    apple: "/clinic-logo.png", // Optional: Icon for iOS home screen bookmarks
+  },
   openGraph: {
     title: "HSR Urology Clinic | Expert Urologic Care",
     description: "Trusted urology consultation for men, women and children in HSR Layout.",
@@ -39,7 +43,7 @@ export default function RootLayout({
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                c[a]=c[a]||function(){c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
