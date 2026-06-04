@@ -250,89 +250,93 @@ const DoctorIcon = () => (
       </div>
 
       {/* Hero Section */}
-      <section className="relative text-white py-12 md:py-20 px-6 md:px-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/hero.avif" 
-            alt="Urology Treatment" 
-            fill 
-            className="object-cover" 
-            priority 
-          />
-          <div className="absolute inset-0 bg-[#073d55]/85"></div>
-        </div>
+<section className="relative text-white py-16 md:py-24 px-6 md:px-12 overflow-hidden text-center">
+  <div className="absolute inset-0 z-0">
+    <Image 
+      src="/hero.avif" 
+      alt="Urology Treatment" 
+      fill 
+      className="object-cover" 
+      priority 
+    />
+    <div className="absolute inset-0 bg-[#073d55]/85"></div>
+  </div>
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="space-y-6 pr-0 lg:pr-8">
-            <div className="inline-flex items-center justify-center gap-2 px-5 py-2.5 md:px-7 md:py-3 bg-[#8b0000] rounded-full text-white text-xs md:text-sm font-bold tracking-wider uppercase shadow-md border border-white/10">
-              <svg className="w-4 h-4 md:w-5 md:h-5 shrink-0 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
+    <div className="space-y-6 flex flex-col items-center">
+      
+      {/* Badge */}
+      <div className="inline-flex items-center justify-center gap-2 px-5 py-2.5 md:px-7 md:py-3 bg-[#8b0000] rounded-full text-white text-xs md:text-sm font-bold tracking-wider uppercase shadow-md border border-white/10">
+        <svg className="w-4 h-4 md:w-5 md:h-5 shrink-0 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span className="leading-snug">Urology Clinic In HSR Layout</span>
+      </div>
+      
+      {/* Heading */}
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        Expert Urologic Care for Men, Women & Children
+      </h1>
+      
+      {/* Subheading */}
+      <p className="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto">
+        Trusted urology consultation close to home in HSR Layout, Sectors 1 to 7, and nearby areas within 5 km.
+      </p>
+      
+      {/* Features List */}
+      <div className="flex flex-wrap justify-center gap-y-4 gap-x-6 text-[15px] font-medium pt-4 max-w-3xl">
+        {[
+          "16+ Yrs Experienced Doctors",
+          "10000+ Urological Surgeries",
+          "Advanced Technology",
+          "200+ Kidney Transplant"
+        ].map((text, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <div className="flex-shrink-0 text-white border-2 border-white rounded-full w-5 h-5 flex items-center justify-center">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="leading-snug">Urology Clinic In HSR Layout</span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-              Expert Urologic Care for Men, Women & Children
-            </h1>
-            
-            <p className="text-lg text-gray-200 leading-relaxed">
-              Trusted urology consultation close to home in HSR Layout, Sectors 1 to 7, and nearby areas within 5 km.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-2 text-[15px] font-medium pt-4">
-              {[
-                "16+ Yrs Experienced Doctors",
-                "10000+ Urological Surgeries",
-                "Advanced Technology",
-                "200+ Kidney Transplant"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 text-white border-2 border-white rounded-full w-5 h-5 flex items-center justify-center">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span>{text}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Ratings Block */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 pt-6 border-t border-white/20 mt-6">
-              <div className="flex items-center gap-3">
-                <div className="text-xl font-bold tracking-tighter">Google</div>
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} className="w-5 h-5 text-[#FFBF23]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="font-semibold ml-1 text-lg">5.0</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-xl font-bold tracking-tighter text-[#0fb0c2]">practo</div>
-                <div className="flex items-center gap-1">
-                  <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} className="w-5 h-5 text-[#FFBF23]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="font-semibold ml-1 text-lg">4.7</span>
-                </div>
-                </div>
-              </div>
-            </div>
-
+            <span>{text}</span>
           </div>
-          
-          <div className="relative z-10 lg:pl-10" id="lead-form">
-            <LeadForm />
+        ))}
+      </div>
+
+      {/* Ratings Block */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10 pt-8 border-t border-white/20 mt-6 w-full max-w-2xl">
+        <div className="flex items-center gap-3">
+          <div className="text-xl font-bold tracking-tighter">Google</div>
+          <div className="flex items-center gap-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg key={star} className="w-5 h-5 text-[#FFBF23]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <span className="font-semibold ml-1 text-lg">5.0</span>
           </div>
         </div>
-      </section>
+        
+        <div className="flex items-center gap-3">
+          <div className="text-xl font-bold tracking-tighter text-[#0fb0c2]">practo</div>
+          <div className="flex items-center gap-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg key={star} className="w-5 h-5 text-[#FFBF23]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <span className="font-semibold ml-1 text-lg">4.7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Centered Lead Form */}
+    <div className="relative z-10 w-full max-w-md mt-12" id="lead-form">
+      <LeadForm />
+    </div>
+  </div>
+</section>
 
       {/* Doctors Section */}
 <section className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-white">
