@@ -3,16 +3,16 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HSR Urology Clinic | Expert Urologic Care in HSR Layout",
-  description: "Trusted urology consultation for men, women and children in HSR Layout, Sectors 1-7, and nearby areas within 5 km.",
+  title: "Urologist in HSR Layout, Bangalore | Dr. Caranj S. Venugopal | HSR Urology Clinic",
+  description: "Blood in urine, kidney stones, UTIs, prostate or men's health concerns? See an experienced urologist in HSR Layout. Evening appointments, Mon–Sat. Book online or call.",
   keywords: ["urologist HSR Layout", "urology clinic HSR", "kidney stone treatment", "prostate specialist", "urology doctor near me"],
   icons: {
-    icon: "/favicon.png", 
-    apple: "/favicon.png", 
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
-    title: "HSR Urology Clinic | Expert Urologic Care",
-    description: "Trusted urology consultation for men, women and children in HSR Layout.",
+    title: "Urologist in HSR Layout, Bangalore | HSR Urology Clinic",
+    description: "See an experienced urologist in HSR Layout for kidney stones, UTIs, prostate and men's health concerns. Evening appointments, Mon–Sat.",
     url: "https://hsrurologyclinic.com",
     siteName: "HSR Urology Clinic",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
