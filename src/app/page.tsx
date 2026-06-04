@@ -330,11 +330,6 @@ const DoctorIcon = () => (
         </div>
       </div>
     </div>
-    
-    {/* Centered Lead Form */}
-    <div className="relative z-10 w-full max-w-md mt-12" id="lead-form">
-      <LeadForm />
-    </div>
   </div>
 </section>
 
@@ -411,7 +406,9 @@ const DoctorIcon = () => (
             {/* NEW: Book Button */}
             {/* NEW: Book Button (Updated to functional link) */}
             <a 
-              href="#lead-form" 
+              href="https://irohealth.com/c/hsr-urology-clinic" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full mt-5 bg-[#8b0000] text-white font-bold py-3.5 px-6 rounded-xl shadow-[0_4px_14px_rgba(139,0,0,0.3)] hover:bg-[#660000] hover:shadow-[0_6px_20px_rgba(139,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -750,105 +747,85 @@ const DoctorIcon = () => (
     </section>
       {/* 9. Final CTA Band */}
       <section className="bg-[#073d55] text-white py-12 px-6 md:px-12 border-t-4 border-[#8b0000]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
-        
-        {/* Text Content */}
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
-            Take control of your urological health.
-          </h2>
-          <p className="italic text-[#e3eef4] text-lg mb-2">
-            Consult our Expert Urologist in HSR Layout.
-          </p>
-          <p className="text-sm max-w-lg text-gray-300 mx-auto md:mx-0 leading-relaxed">
-            Submit your details or visit our clinic. Our dedicated team will help you find the right, personalized treatment path for kidney, prostate, or men's health concerns.
-          </p>
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
+    
+    {/* Text Content */}
+    <div className="text-center md:text-left">
+      <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+        Take control of your urological health.
+      </h2>
+      <p className="italic text-[#e3eef4] text-lg mb-2">
+        Consult our Expert Urologist in HSR Layout.
+      </p>
+      <p className="text-sm max-w-lg text-gray-300 mx-auto md:mx-0 leading-relaxed">
+        Book an appointment online or call our clinic directly. Our dedicated team will help you find the right, personalized treatment path for kidney, prostate, or men's health concerns.
+      </p>
+    </div>
+    
+    {/* Action Buttons */}
+    <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
+      
+      {/* Secondary Button (External Booking Link) */}
+      <a 
+        href="https://irohealth.com/c/hsr-urology-clinic" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4 border border-white/40 hover:bg-white/10 rounded-full px-8 py-4 transition w-full sm:w-auto justify-center group"
+      >
+        <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <div className="text-left">
+          <div className="text-xs text-gray-300">Schedule Online</div>
+          <div className="font-bold tracking-wide">Book Consult</div>
         </div>
-        
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
-          
-          {/* Secondary Button (Scrolls to Form) */}
-          <a 
-            href="#lead-form" 
-            className="flex items-center gap-4 border border-white/40 hover:bg-white/10 rounded-full px-8 py-4 transition w-full sm:w-auto justify-center group"
-          >
-            <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs text-gray-300">Need Guidance?</div>
-              <div className="font-bold tracking-wide">Request A Call</div>
-            </div>
-          </a>
+      </a>
 
-          {/* Primary Brand Button (Triggers Phone Call) */}
-          <a 
-            href="tel:+919054255425" 
-            className="flex items-center gap-4 border border-transparent hover:bg-[#660000] rounded-full px-8 py-4 transition w-full sm:w-auto justify-center group bg-[#8b0000] shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
-          >
-            <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-xs text-white/80">Ready to start?</div>
-              <div className="font-bold tracking-wide">Book Consult</div>
-            </div>
-          </a>
-
+      {/* Primary Brand Button (Triggers Phone Call) */}
+      <a 
+        href="tel:+919054255425" 
+        className="flex items-center gap-4 border border-transparent hover:bg-[#660000] rounded-full px-8 py-4 transition w-full sm:w-auto justify-center group bg-[#8b0000] shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
+      >
+        <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        <div className="text-left">
+          <div className="text-xs text-white/80">Need Guidance?</div>
+          <div className="font-bold tracking-wide">Call Now</div>
         </div>
-      </div>
-    </section>
+      </a>
 
+    </div>
+  </div>
+</section>
       <Footer />
 
-      {/* Sticky Tab Form */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 translate-x-[calc(100%-2.5rem)] hover:translate-x-0 transition-transform duration-300 z-40 hidden md:flex">
-        <div 
-          className="bg-[#8b0000] text-white p-3 rounded-l-md font-medium tracking-wide shadow-md cursor-pointer flex items-center justify-center border-y border-l border-[#6b0000]" 
-          style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-        >
-          Book Consultation
-        </div>
-        <div className="bg-white p-5 shadow-2xl border border-gray-200 w-72 rounded-bl-md">
-          <p className="text-sm font-bold text-[#8b0000] mb-1">Need quick assistance?</p>
-          <p className="text-xs text-gray-600 mb-4 leading-relaxed">Leave your details and we'll call you right back.</p>
-          <form onSubmit={handleStickySubmit} className="space-y-3">
-            <input 
-              type="text" 
-              required 
-              placeholder="Full Name *" 
-              className="w-full border border-gray-300 p-2 text-sm rounded focus:ring-1 focus:ring-[#8b0000] outline-none" 
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-            />
-            <input 
-              type="tel" 
-              required 
-              pattern="[0-9]{10}"
-              placeholder="Mobile Number *" 
-              className="w-full border border-gray-300 p-2 text-sm rounded focus:ring-1 focus:ring-[#8b0000] outline-none" 
-              value={formData.phone}
-              onChange={(e) => setFormData({...formData, phone: e.target.value})}
-            />
-            <textarea 
-              required
-              rows={2}
-              placeholder="Your Concern *" 
-              className="w-full border border-gray-300 p-2 text-sm rounded focus:ring-1 focus:ring-[#8b0000] outline-none resize-none" 
-              value={formData.message}
-              onChange={(e) => setFormData({...formData, message: e.target.value})}
-            />
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="w-full bg-[#8b0000] text-white text-sm font-bold py-2.5 rounded hover:bg-[#6b0000] disabled:opacity-70 mt-2"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Request"}
-            </button>
-          </form>
-        </div>
-      </div>
+      {/* Sticky Booking Tab */}
+<a 
+  href="https://irohealth.com/c/hsr-urology-clinic"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center justify-center gap-4 bg-[#8b0000] text-white py-5 px-3 rounded-l-xl shadow-[-4px_0_15px_rgba(139,0,0,0.25)] hover:bg-[#660000] hover:-translate-x-1.5 hover:shadow-[-8px_0_25px_rgba(139,0,0,0.4)] transition-all duration-300 group border-y border-l border-white/20 cursor-pointer"
+>
+  <div className="bg-white/20 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+    <svg 
+      className="w-5 h-5 text-white" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  </div>
+  
+  <span 
+    className="font-bold tracking-widest uppercase text-sm drop-shadow-md" 
+    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+  >
+    Book Consultation
+  </span>
+</a>
     </main>
   );
 }
