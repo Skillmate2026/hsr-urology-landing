@@ -6,20 +6,6 @@ export const WEBHOOK_URL = "https://n8n.nomiris.com/webhook/hsrurology";
 export const WHATSAPP_NUMBER = "919054255425";
 export const BOOKING_URL = "https://irohealth.com/c/hsr-urology-clinic";
 
-export type Utms = { utm_source: string; utm_medium: string; utm_campaign: string };
-
-export function captureUtms(): Utms {
-  if (typeof window === "undefined") {
-    return { utm_source: "", utm_medium: "", utm_campaign: "" };
-  }
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utm_source: params.get("utm_source") || "",
-    utm_medium: params.get("utm_medium") || "",
-    utm_campaign: params.get("utm_campaign") || "",
-  };
-}
-
 /**
  * Pushes the conversion event to GTM, posts the lead to the webhook (keepalive so
  * it survives the redirect), then redirects to WhatsApp or the booking page.
@@ -30,15 +16,17 @@ export function submitLead(args: {
   name: string;
   phone: string;
   message: string;
-  utms: Utms;
 }) {
-  const { mode, location, name, phone, message, utms } = args;
+  const { mode, location, name, phone, message } = args;
 
   // Normalize to E.164 (+91) for Google Ads enhanced conversions
   const phone10 = phone.replace(/\D/g, "").slice(-10);
   const phoneE164 = phone10 ? `+91${phone10}` : phone;
 
-  const payload = { name, phone, message, lead_type: mode, cta_location: location, ...utms };
+  // Full landing URL (includes any query string / UTMs and hash)
+  const pageUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  const payload = { name, phone, message, lead_type: mode, cta_location: location, page_url: pageUrl };
 
   // 1. GTM conversion custom event (pushed synchronously before the redirect)
   if (typeof window !== "undefined" && (window as any).dataLayer) {
@@ -48,7 +36,7 @@ export function submitLead(args: {
       cta_location: location,
       form_name: name,
       form_phone: phoneE164,
-      ...utms,
+      page_url: pageUrl,
     });
   }
 
