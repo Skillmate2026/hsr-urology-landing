@@ -1,20 +1,15 @@
 "use client";
-import { useState, useEffect, FormEvent } from "react";
-import { captureUtms, submitLead } from "../lib/leads";
+import { useState, FormEvent } from "react";
+import { submitLead } from "../lib/leads";
 
 export default function HeroLeadForm() {
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
-  const [utms, setUtms] = useState({ utm_source: "", utm_medium: "", utm_campaign: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    setUtms(captureUtms());
-  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    submitLead({ mode: "book", location: "hero_form", ...formData, utms });
+    submitLead({ mode: "book", location: "hero_form", ...formData });
   };
 
   return (

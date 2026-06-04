@@ -14,8 +14,8 @@ The site pushes these events to `window.dataLayer`. GTM triggers/variables below
 ### Lead events (primary conversions) — on form submit, just before redirect
 | `event` | Parameters |
 |---|---|
-| `whatsapp_lead` | `lead_type` (`"whatsapp"`), `cta_location`, `form_name`, `form_phone` (E.164, e.g. `+919054255425`), `utm_source`, `utm_medium`, `utm_campaign` |
-| `book_appointment_lead` | `lead_type` (`"book"`), `cta_location`, `form_name`, `form_phone`, `utm_source`, `utm_medium`, `utm_campaign` |
+| `whatsapp_lead` | `lead_type` (`"whatsapp"`), `cta_location`, `form_name`, `form_phone` (E.164, e.g. `+919054255425`), `page_url` (full landing URL incl. query string) |
+| `book_appointment_lead` | `lead_type` (`"book"`), `cta_location`, `form_name`, `form_phone`, `page_url` |
 
 `cta_location` is one of: `header`, `floating_button`, `hero_form`, `doctor_card`, `final_cta`, `sticky_tab`, `contact_section`.
 
@@ -45,8 +45,8 @@ The website already pushes these dataLayer events (build triggers/variables to m
 - whatsapp_click            params: cta_location
 - book_appointment_click    params: cta_location
 - call_click                params: cta_location
-- whatsapp_lead             params: lead_type, cta_location, form_name, form_phone, utm_source, utm_medium, utm_campaign
-- book_appointment_lead     params: lead_type, cta_location, form_name, form_phone, utm_source, utm_medium, utm_campaign
+- whatsapp_lead             params: lead_type, cta_location, form_name, form_phone, page_url
+- book_appointment_lead     params: lead_type, cta_location, form_name, form_phone, page_url
 form_phone is already in E.164 format (e.g. +919054255425).
 
 STEP 1 — Create Data Layer Variables (Variables → User-Defined → New → "Data Layer Variable"). Create one for each, naming the variable "DLV - <key>" and setting "Data Layer Variable Name" to exactly <key>, Version 2:
@@ -54,9 +54,7 @@ STEP 1 — Create Data Layer Variables (Variables → User-Defined → New → "
   DLV - cta_location     -> cta_location
   DLV - form_name        -> form_name
   DLV - form_phone       -> form_phone
-  DLV - utm_source       -> utm_source
-  DLV - utm_medium       -> utm_medium
-  DLV - utm_campaign     -> utm_campaign
+  DLV - page_url         -> page_url
 
 STEP 2 — Create Triggers (Triggers → New → Trigger Configuration → "Custom Event"). For each, set "Event name" to the exact string and "This trigger fires on" = All Custom Events. Name them:
   CE - whatsapp_click            (Event name: whatsapp_click)

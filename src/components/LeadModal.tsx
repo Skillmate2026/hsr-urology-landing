@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, FormEvent } from "react";
-import { captureUtms, submitLead, type LeadMode } from "../lib/leads";
+import { submitLead, type LeadMode } from "../lib/leads";
 
 type LeadModalData = { mode: LeadMode; location: string } | null;
 
@@ -23,12 +23,7 @@ export default function LeadModal({ data, onClose }: { data: LeadModalData; onCl
   const mode = data?.mode ?? null;
   const location = data?.location ?? "";
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
-  const [utms, setUtms] = useState({ utm_source: "", utm_medium: "", utm_campaign: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    setUtms(captureUtms());
-  }, []);
 
   // Close on Escape
   useEffect(() => {
@@ -47,7 +42,7 @@ export default function LeadModal({ data, onClose }: { data: LeadModalData; onCl
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    submitLead({ mode, location, ...formData, utms });
+    submitLead({ mode, location, ...formData });
   };
 
   return (
